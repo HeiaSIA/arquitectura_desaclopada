@@ -149,6 +149,14 @@ h1 span {
   gap: 0.5rem;
 }
 
+.hero-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  background: #172b4d;
+}
+
 .content-section {
   padding: 5.5rem 0;
 }
