@@ -1,28 +1,247 @@
-<table border="1">
-  <tbody>
-    <tr>
-      <th>Apellido</th>
-      <td>Cando</td>
-    </tr>
-    <tr>
-      <th>Nombre</th>
-      <td>Klever</td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td>klever.cando12@gmail.com</td>
-    </tr>
-    <tr>
-      <th>Dirreccion</th>
-      <td>San Felipe, Calle 10 de agosto.</td>
-    </tr>
-    <tr>
-      <th>Acerca de mi</th>
-      <td>Soy estudiante de Ingenieria de Sotfware, me gustan los videojuegos y programar</td>
-    </tr>
-    <tr>
-       <th>Foto</th>
-    </tr>
-  </tbody>
-</table>
-<img src="img/imagen.png" alt="gatito" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aprende los fundamentos de la arquitectura desacoplada y los microservicios con ejemplos y un cuestionario interactivo.">
+    <title>Arquitectura desacoplada y microservicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="js/quiz.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+          <a class="navbar-brand fw-semibold" href="#inicio">Sistemas distribuidos<span class="brand-dot">.</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Mostrar navegación">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+              <li class="nav-item"><a class="nav-link" href="#fundamentos">Fundamentos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#comparacion">Comparación</a></li>
+              <li class="nav-item"><a class="nav-link" href="#cuestionario">Cuestionario</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-8">
+              <p class="eyebrow">GUÍA PRÁCTICA · 8 MIN DE LECTURA</p>
+              <h1>Arquitectura desacoplada <span>y microservicios</span></h1>
+              <p class="hero-copy">Diseña sistemas donde cada parte puede evolucionar, desplegarse y escalar con mayor independencia.</p>
+              <a class="btn btn-primary btn-lg" href="#fundamentos">Explorar los fundamentos <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="architecture-visual" aria-label="Representación de frontend, API y servicios independientes" role="img">
+                <div class="visual-node visual-client">Frontend</div>
+                <div class="visual-connector"><span>API</span></div>
+                <div class="visual-services">
+                  <div class="visual-node">Usuarios</div>
+                  <div class="visual-node">Pedidos</div>
+                  <div class="visual-node">Pagos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="fundamentos">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">01 — CONCEPTOS CLAVE</p>
+            <h2>¿Qué significa desacoplar?</h2>
+            <p>Separar responsabilidades y definir límites claros para que un componente no dependa de los detalles internos de otro.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <article class="card concept-card h-100">
+                <div class="card-body">
+                  <span class="card-index">01</span>
+                  <h3 class="card-title">Frontend y backend independientes</h3>
+                  <p class="card-text">La interfaz presenta la experiencia al usuario; el backend aplica las reglas del negocio y gestiona los datos. Pueden desarrollarse y desplegarse por separado mientras respeten un contrato compartido.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card concept-card h-100">
+                <div class="card-body">
+                  <span class="card-index">02</span>
+                  <h3 class="card-title">Comunicación mediante contratos</h3>
+                  <p class="card-text">Los servicios colaboran sin compartir su implementación interna. <strong>REST</strong> usa recursos HTTP; <strong>gRPC</strong> ofrece llamadas tipadas y eficientes; los <strong>eventos</strong> notifican cambios de forma asíncrona.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card concept-card h-100">
+                <div class="card-body">
+                  <span class="card-index">03</span>
+                  <h3 class="card-title">Escalabilidad independiente</h3>
+                  <p class="card-text">Cada componente puede desplegarse y escalar según su carga. Si el servicio de pedidos recibe más tráfico, es posible aumentar sus instancias sin escalar todo el sistema.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card concept-card h-100">
+                <div class="card-body">
+                  <span class="card-index">04</span>
+                  <h3 class="card-title">Database per Service</h3>
+                  <p class="card-text">Cada microservicio es dueño de sus datos y los expone a otros mediante su API, en vez de compartir tablas. Esto reduce el acoplamiento, aunque requiere resolver consistencia y consultas entre servicios.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="insight-box mt-4">
+            <span class="insight-mark" aria-hidden="true">i</span>
+            <p class="mb-0"><strong>Idea importante:</strong> microservicios no significa “dividir por dividir”. Cada servicio debe representar una responsabilidad del negocio y tener límites que el equipo pueda operar.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-section comparison-section" id="comparacion">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">02 — DOS ENFOQUES</p>
+            <h2>Monolito vs. microservicios</h2>
+            <p>No hay una arquitectura universalmente mejor: la elección depende del dominio, el equipo y las necesidades operativas.</p>
+          </div>
+          <div class="table-responsive comparison-table-wrap">
+            <table class="table comparison-table align-middle mb-0">
+              <caption class="visually-hidden">Comparación entre arquitectura monolítica y arquitectura de microservicios</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Aspecto</th>
+                  <th scope="col">Arquitectura monolítica</th>
+                  <th scope="col">Arquitectura de microservicios</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Estructura</th>
+                  <td>Una aplicación con componentes integrados.</td>
+                  <td>Servicios pequeños organizados por capacidades del negocio.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Despliegue</th>
+                  <td>Normalmente se publica la aplicación completa.</td>
+                  <td>Cada servicio puede publicarse de forma independiente.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Escalabilidad</th>
+                  <td>Se escala la aplicación como una unidad.</td>
+                  <td>Se escala cada servicio según su demanda.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Datos</th>
+                  <td>Es común una base de datos compartida.</td>
+                  <td>Cada servicio controla su propio almacenamiento.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Complejidad operativa</th>
+                  <td>Menor para comenzar y operar.</td>
+                  <td>Mayor: requiere observabilidad, automatización y gestión de fallos de red.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section principles-section">
+        <div class="container">
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-5">
+              <p class="eyebrow">03 — EN LA PRÁCTICA</p>
+              <h2>Independencia con responsabilidad</h2>
+              <p class="section-description">Separar servicios da flexibilidad, pero también distribuye la complejidad. Para que el sistema sea confiable, cada límite debe tener contratos y observabilidad claros.</p>
+            </div>
+            <div class="col-lg-7">
+              <div class="principle-list">
+                <div class="principle-item">
+                  <span class="principle-number">1</span>
+                  <div><h3>Define contratos estables</h3><p>Versiona APIs, valida compatibilidad y acuerda qué datos se intercambian.</p></div>
+                </div>
+                <div class="principle-item">
+                  <span class="principle-number">2</span>
+                  <div><h3>Asume fallos parciales</h3><p>Usa límites de tiempo, reintentos controlados e idempotencia en operaciones críticas.</p></div>
+                </div>
+                <div class="principle-item">
+                  <span class="principle-number">3</span>
+                  <div><h3>Observa el sistema completo</h3><p>Centraliza métricas, registros y trazas para entender las llamadas entre servicios.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiz-invitation" aria-label="Invitación al cuestionario">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+          <div>
+            <p class="eyebrow mb-2">¿LISTO PARA PONER A PRUEBA LO APRENDIDO?</p>
+            <h2 class="mb-0">Comprueba tus conocimientos.</h2>
+          </div>
+          <a class="btn btn-primary btn-lg flex-shrink-0" href="#cuestionario">Hacer cuestionario <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="content-section quiz-section" id="cuestionario">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">04 — CUESTIONARIO</p>
+            <h2>¿Qué tanto aprendiste?</h2>
+            <p>Responde las preguntas y recibe una explicación técnica después de cada respuesta.</p>
+          </div>
+          <div class="quiz-card card">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                <span class="quiz-progress-label" id="quiz-progress">Pregunta 1 de 5</span>
+                <span class="quiz-score" id="quiz-score" aria-live="polite">Puntuación: 0</span>
+              </div>
+              <div class="progress mb-4" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+                <div class="progress-bar" id="quiz-progress-bar" style="width: 0%"></div>
+              </div>
+              <div id="quiz-content" aria-live="polite">
+                <h3 class="question-title" id="question-title"></h3>
+                <div class="answer-list d-grid gap-2 mt-4" id="answer-list"></div>
+                <div class="feedback mt-3" id="quiz-feedback" aria-live="assertive" hidden></div>
+                <div class="d-flex justify-content-end mt-4">
+                  <button class="btn btn-primary" id="next-question" type="button" hidden>Siguiente pregunta <span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+              <div class="quiz-result text-center py-3" id="quiz-result" aria-live="polite" hidden>
+                <p class="eyebrow">CUESTIONARIO COMPLETADO</p>
+                <h3 id="result-title"></h3>
+                <p class="result-copy" id="result-copy"></p>
+                <button class="btn btn-outline-primary mt-2" id="restart-quiz" type="button">Intentar de nuevo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <img class="creator-photo" src="img/imagen.png" alt="Ilustración de un gatito">
+          <div>
+            <p class="footer-label mb-1">Página creada por</p>
+            <p class="creator-name mb-0">Klever Cando</p>
+          </div>
+        </div>
+        <p class="footer-note mb-0">Un recurso educativo sobre arquitectura de software.</p>
+      </div>
+    </footer>
+  </body>
+</html>
